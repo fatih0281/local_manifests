@@ -18,14 +18,14 @@ ROM_LINK="https://github.com/Lunaris-AOSP/android"
 ROM_BRANCH="16.2"
 
 DEVICE="r8q"
-BUILD_TYPE="user"  # user, userdebug veya eng
+BUILD_TYPE="userdebug"  # user, userdebug veya eng
 LUNCH_CMD="lunch lineage_${DEVICE}-bp4a-${BUILD_TYPE}" # ROM'a göre değişebilir (Örn: lunch lineage_r8q-userdebug)
 BUILD_CMD="m bacon" # Lunaris/EvoX için 'm bacon', crDroid/Lineage için 'brunch ${DEVICE}'
 
 # ---------------------------------------------------------
 # 2. BUILD FLAGS (DERLEME BAYRAKLARI)
 # ---------------------------------------------------------
-USE_CUSTOM_FLAGS=true  # Sadece özel donanım bayrağı isteyen ROM'larda (Lunaris vb.) 'true' yap
+USE_CUSTOM_FLAGS=false  # Sadece özel donanım bayrağı isteyen ROM'larda (Lunaris vb.) 'true' yap
 
 # Her ROM'da standart olarak kalması gereken genel bilgiler
 export BUILD_USERNAME="Fatih"
@@ -47,7 +47,7 @@ ROM_ZIP="${OUT_DIR}/*${DEVICE}*.zip"
 # ---------------------------------------------------------
 BOT_TOKEN="8990362086:AAGV1fAidZgbIsOiQjfqwI9BVRqf6-1v1Uc"
 CHAT_ID="574719563"
-USER="@IamZeus14"
+USER="@T4958"
 
 # ===========================================
 # YARDIMCI FONKSİYONLAR (TELEGRAM & STATS)
