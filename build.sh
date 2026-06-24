@@ -25,7 +25,7 @@ BUILD_CMD="m bacon" # Lunaris/EvoX için 'm bacon', crDroid/Lineage için 'brunc
 # ---------------------------------------------------------
 # 2. BUILD FLAGS (DERLEME BAYRAKLARI)
 # ---------------------------------------------------------
-USE_CUSTOM_FLAGS=false  # Sadece özel donanım bayrağı isteyen ROM'larda (Lunaris vb.) 'true' yap
+USE_CUSTOM_FLAGS=true  # Sadece özel donanım bayrağı isteyen ROM'larda (Lunaris vb.) 'true' yap
 
 # Her ROM'da standart olarak kalması gereken genel bilgiler
 export BUILD_USERNAME="Fatih"
@@ -214,9 +214,9 @@ function apply_build_flags() {
     export WITH_GMS_COMMS_SUITE=false
     export WITH_PIXEL_LAUNCHER=false
     export TARGET_USE_MAPS=true
-    export TARGET_USE_FILES=true
+    export TARGET_USE_FILES=false
     export TARGET_USE_GPHOTOS=false
-    export TARGET_USE_WALLPAPERS=false
+    export TARGET_USE_WALLPAPERS=true
     export USE_REALITY_ENGINE=true
     export SURFACE_FLINGER_BOOST=true
   else
