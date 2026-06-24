@@ -196,7 +196,7 @@ function create_manifest() {
   cat << 'XML' > .repo/local_manifests/r8q.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project path="device/samsung/r8q" name="LineageOS/android_device_samsung_r8q" remote="github" revision="lineage-23.2" />
+  <project path="device/samsung/r8q" name="fatih0281/android_device_samsung_r8q" remote="github" revision="lunaris" />
   <project path="device/samsung/sm8250-common" name="LineageOS/android_device_samsung_sm8250-common" remote="github" revision="lineage-23.2" />
   <project path="vendor/samsung/r8q" name="TheMuppets/proprietary_vendor_samsung_r8q" remote="github" revision="lineage-23.2" />
   <project path="vendor/samsung/sm8250-common" name="TheMuppets/proprietary_vendor_samsung_sm8250-common" remote="github" revision="lineage-23.2" />
