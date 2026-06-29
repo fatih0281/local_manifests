@@ -13,19 +13,19 @@ set -o pipefail
 # ---------------------------------------------------------
 # 1. ROM VE CİHAZ AYARLARI (DEĞİŞTİRİLEBİLİR)
 # ---------------------------------------------------------
-ROM_NAME="LunarisAOSP"
-ROM_LINK="https://github.com/Lunaris-AOSP/android"
-ROM_BRANCH="16.2"
+ROM_NAME="YAAP"
+ROM_LINK="https://github.com/yaap/manifest"
+ROM_BRANCH="sixteen"
 
 DEVICE="r8q"
 BUILD_TYPE="userdebug"  # user, userdebug veya eng
-LUNCH_CMD="lunch lineage_${DEVICE}-bp4a-${BUILD_TYPE}" # ROM'a göre değişebilir (Örn: lunch lineage_r8q-userdebug)
-BUILD_CMD="m bacon" # Lunaris/EvoX için 'm bacon', crDroid/Lineage için 'brunch ${DEVICE}'
+LUNCH_CMD="lunch yaap_${DEVICE}-bp4a-${BUILD_TYPE}" # ROM'a göre değişebilir (Örn: lunch lineage_r8q-userdebug)
+BUILD_CMD="m yaap" # Lunaris/EvoX için 'm bacon', crDroid/Lineage için 'brunch ${DEVICE}'
 
 # ---------------------------------------------------------
 # 2. BUILD FLAGS (DERLEME BAYRAKLARI)
 # ---------------------------------------------------------
-USE_CUSTOM_FLAGS=true  # Sadece özel donanım bayrağı isteyen ROM'larda (Lunaris vb.) 'true' yap
+USE_CUSTOM_FLAGS=false  # Sadece özel donanım bayrağı isteyen ROM'larda (Lunaris vb.) 'true' yap
 
 # Her ROM'da standart olarak kalması gereken genel bilgiler
 export BUILD_USERNAME="Fatih"
@@ -196,7 +196,7 @@ function create_manifest() {
   cat << 'XML' > .repo/local_manifests/r8q.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project path="device/samsung/r8q" name="fatih0281/android_device_samsung_r8q" remote="github" revision="lunaris" />
+  <project path="device/samsung/r8q" name="fatih0281/android_device_samsung_r8q" remote="github" revision="yaap" />
   <project path="device/samsung/sm8250-common" name="LineageOS/android_device_samsung_sm8250-common" remote="github" revision="lineage-23.2" />
   <project path="vendor/samsung/r8q" name="TheMuppets/proprietary_vendor_samsung_r8q" remote="github" revision="lineage-23.2" />
   <project path="vendor/samsung/sm8250-common" name="TheMuppets/proprietary_vendor_samsung_sm8250-common" remote="github" revision="lineage-23.2" />
