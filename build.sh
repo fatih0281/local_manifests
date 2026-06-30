@@ -17,12 +17,17 @@ ROM_NAME="YAAP"
 ROM_LINK="https://github.com/yaap/manifest"
 ROM_BRANCH="sixteen"
 
+echo -e "${yellow}🧹 LineageOS'e özel zararlı bağımlılıklar (Android.bp) yok ediliyor...${clear}"
+rm -rf hardware/samsung/packages/AdvancedDisplay
+rm -rf hardware/samsung/packages/Doze
+rm -rf hardware/samsung/packages/LineageHealth
+rm -rf hardware/samsung/packages/LiveDisplay
+rm -rf hardware/samsung/packages/PowerShare
+rm -rf hardware/samsung/packages/Touch
+
 DEVICE="r8q"
 BUILD_TYPE="userdebug"  # user, userdebug veya eng
 export TARGET_RELEASE=bp4a
-echo "🧹 LineageOS bağımlılıkları temizleniyor..."
-rm -rf hardware/samsung/packages/AdvancedDisplay/Android.bp
-rm -rf hardware/samsung/packages/Doze/Android.bp
 LUNCH_CMD="lunch yaap_${DEVICE}-${BUILD_TYPE}"
 # LUNCH_CMD="lunch yaap_${DEVICE}-bp4a-${BUILD_TYPE}" # ROM'a göre değişebilir (Örn: lunch lineage_r8q-userdebug)
 BUILD_CMD="m yaap" # Lunaris/EvoX için 'm bacon', crDroid/Lineage için 'brunch ${DEVICE}'
