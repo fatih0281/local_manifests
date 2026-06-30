@@ -19,6 +19,14 @@ ROM_BRANCH="sixteen"
 
 DEVICE="r8q"
 BUILD_TYPE="userdebug"  # user, userdebug veya eng
+
+# 1. LiveDisplay ve Touch HAL (Lineage özel) kalıntılarını uçur
+rm -rf hardware/samsung/aidl/touch/Android.bp
+rm -rf hardware/samsung/aidl/livedisplay/Android.bp
+
+# 2. Yeni Halcyon NFC hatasını uçur (Eksik nfc_nci_sec modülü)
+rm -rf device/samsung/r8q/hardware/samsung_slsi/nfc/aidl/Android.bp
+
 export TARGET_RELEASE=bp4a
 LUNCH_CMD="lunch yaap_${DEVICE}-${BUILD_TYPE}"
 # LUNCH_CMD="lunch yaap_${DEVICE}-bp4a-${BUILD_TYPE}" # ROM'a göre değişebilir (Örn: lunch lineage_r8q-userdebug)
