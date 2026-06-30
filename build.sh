@@ -19,7 +19,9 @@ ROM_BRANCH="sixteen"
 
 DEVICE="r8q"
 BUILD_TYPE="userdebug"  # user, userdebug veya eng
-LUNCH_CMD="lunch yaap_${DEVICE}-bp4a-${BUILD_TYPE}" # ROM'a göre değişebilir (Örn: lunch lineage_r8q-userdebug)
+export TARGET_RELEASE=bp4a
+LUNCH_CMD="lunch yaap_${DEVICE}-${BUILD_TYPE}"
+# LUNCH_CMD="lunch yaap_${DEVICE}-bp4a-${BUILD_TYPE}" # ROM'a göre değişebilir (Örn: lunch lineage_r8q-userdebug)
 BUILD_CMD="m yaap" # Lunaris/EvoX için 'm bacon', crDroid/Lineage için 'brunch ${DEVICE}'
 
 # ---------------------------------------------------------
@@ -196,8 +198,8 @@ function create_manifest() {
   cat << 'XML' > .repo/local_manifests/r8q.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project path="device/samsung/r8q" name="LineageOS/android_device_samsung_r8q" remote="github" revision="lineage-23.2" />
-  <project path="device/samsung/sm8250-common" name="LineageOS/android_device_samsung_sm8250-common" remote="github" revision="lineage-23.2" />
+  <project path="device/samsung/r8q" name="fatih0281/device_samsung_r8q" remote="github" revision="yaap" />
+  <project path="device/samsung/sm8250-common" name="fatih0281/device_samsung_sm8250-common" remote="github" revision="yaap" />
   <project path="vendor/samsung/r8q" name="TheMuppets/proprietary_vendor_samsung_r8q" remote="github" revision="lineage-23.2" />
   <project path="vendor/samsung/sm8250-common" name="TheMuppets/proprietary_vendor_samsung_sm8250-common" remote="github" revision="lineage-23.2" />
   <project path="kernel/samsung/sm8250" name="LineageOS/android_kernel_samsung_sm8250" remote="github" revision="lineage-23.2" />
