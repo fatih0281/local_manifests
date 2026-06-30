@@ -20,6 +20,9 @@ ROM_BRANCH="sixteen"
 DEVICE="r8q"
 BUILD_TYPE="userdebug"  # user, userdebug veya eng
 export TARGET_RELEASE=bp4a
+echo "🧹 LineageOS bağımlılıkları temizleniyor..."
+rm -rf hardware/samsung/packages/AdvancedDisplay/Android.bp
+rm -rf hardware/samsung/packages/Doze/Android.bp
 LUNCH_CMD="lunch yaap_${DEVICE}-${BUILD_TYPE}"
 # LUNCH_CMD="lunch yaap_${DEVICE}-bp4a-${BUILD_TYPE}" # ROM'a göre değişebilir (Örn: lunch lineage_r8q-userdebug)
 BUILD_CMD="m yaap" # Lunaris/EvoX için 'm bacon', crDroid/Lineage için 'brunch ${DEVICE}'
