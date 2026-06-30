@@ -17,14 +17,6 @@ ROM_NAME="YAAP"
 ROM_LINK="https://github.com/yaap/manifest"
 ROM_BRANCH="sixteen"
 
-echo -e "${yellow}🧹 LineageOS'e özel zararlı bağımlılıklar (Android.bp) yok ediliyor...${clear}"
-rm -rf hardware/samsung/packages/AdvancedDisplay
-rm -rf hardware/samsung/packages/Doze
-rm -rf hardware/samsung/packages/LineageHealth
-rm -rf hardware/samsung/packages/LiveDisplay
-rm -rf hardware/samsung/packages/PowerShare
-rm -rf hardware/samsung/packages/Touch
-
 DEVICE="r8q"
 BUILD_TYPE="userdebug"  # user, userdebug veya eng
 export TARGET_RELEASE=bp4a
@@ -211,7 +203,7 @@ function create_manifest() {
   <project path="vendor/samsung/r8q" name="TheMuppets/proprietary_vendor_samsung_r8q" remote="github" revision="lineage-23.2" />
   <project path="vendor/samsung/sm8250-common" name="TheMuppets/proprietary_vendor_samsung_sm8250-common" remote="github" revision="lineage-23.2" />
   <project path="kernel/samsung/sm8250" name="LineageOS/android_kernel_samsung_sm8250" remote="github" revision="lineage-23.2" />
-  <project path="hardware/samsung" name="LineageOS/android_hardware_samsung" remote="github" revision="lineage-23.2" />
+  <project path="hardware/samsung" name="fatih0281/android_hardware_samsung" remote="github" revision="yaap" />
 </manifest>
 XML
 }
