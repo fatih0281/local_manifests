@@ -5,5 +5,5 @@
   <project path="vendor/samsung/r8q" name="TheMuppets/proprietary_vendor_samsung_r8q" remote="github" revision="lineage-23.2" />
   <project path="vendor/samsung/sm8250-common" name="TheMuppets/proprietary_vendor_samsung_sm8250-common" remote="github" revision="lineage-23.2" />
   <project path="kernel/samsung/sm8250" name="LineageOS/android_kernel_samsung_sm8250" remote="github" revision="lineage-23.2" />
-  <project path="hardware/samsung" name="LineageOS/android_hardware_samsung" remote="github" revision="lineage-23.2" />
+  <project path="hardware/samsung" name="yumeerin/hardware_samsung" remote="github" revision="16.2" />
 </manifest>
